@@ -54,6 +54,7 @@ for ele in snts:
     dct[ele]=fin_score
 
 df = pd.DataFrame.from_dict(dct, orient="index")
+# orient='index' to create the DataFrame using dictionary keys as rows
 df.to_csv("dataset.csv")
 
 #print(df)
