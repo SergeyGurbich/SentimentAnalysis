@@ -53,8 +53,8 @@ for ele in snts:
         fin_score=0
     dct[ele]=fin_score
 
-df = pd.DataFrame.from_dict(dct, orient="index")
-# orient='index' to create the DataFrame using dictionary keys as rows
-df.to_csv("dataset.csv")
+#df = pd.DataFrame.from_dict(dct, orient="index", columns=['label'])
+df=pd.DataFrame(dct.items(), columns=['text','labels'])
+df.to_csv("dataset2.csv")
 
 #print(df)
