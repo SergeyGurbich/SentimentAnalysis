@@ -6,4 +6,3 @@ The markup of the sentences was done automatically with the uploaded script
 based on the lists of positive and negative words from the Sentiment Lexicons for All Major Languages project (Chen & Skiena, ACL 2014). 
 These lists were checked and edited manually by me to exclude ambiguous and mistakenly included words.
 
-Translated with www.DeepL.com/Translator (free version)
