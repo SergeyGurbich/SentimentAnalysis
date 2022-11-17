@@ -25,7 +25,7 @@ tokenized_data = tokenizer(dataset['text'], return_tensors="np", padding=True)
 
 tokenized_data1=tokenized_data.data
 # В получившемся словаре два ключа: dict_keys(['input_ids', 'attention_mask'])
-tokenized_data2=tokenized_data1['input_ids']
+tokenized_data2=tokenized_data['input_ids']
 
 import numpy as np
 labels = np.array(dataset["labels"])
@@ -38,7 +38,7 @@ import tensorflow as tf
 # Load and compile our model
 model = TFAutoModelForSequenceClassification.from_pretrained("youscan/ukr-roberta-base", from_pt=True, num_labels=2)
 
-model.compile(optimizer=Adam(learning_rate=0.005))
+model.compile(optimizer=Adam(learning_rate=3e-5), loss='binary_crossentropy')
 
 model.fit(tokenized_data2, labels, epochs=10, verbose=True, validation_split=0.2)
 
